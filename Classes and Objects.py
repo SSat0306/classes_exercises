@@ -44,4 +44,6 @@ a_bus = Bus()
 a_bus.name = "Translink Bus - 487"
 a_bus.max_speed = 148
 a_bus.fare(10)
+a_bus.fare(12)
+
 
