@@ -9,5 +9,12 @@ THAT'S WHY THE GOVERNMENT WANTS IT.
 WE CAN'T LET THEM HAVE IT.
 
 ONE GOAL: SURVIVAL ... AND THE CAR
-REACHING 
+REACH THE SAFEHOUSE BEFORE THEY
+GET CHOAU
+"""
+
+CHOICES = """
+    --- Your choices ---
+    Q.Quit the game.
+    ---
 """
