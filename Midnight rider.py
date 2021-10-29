@@ -1,12 +1,16 @@
 # Midnight Rider
+import random
 import sys
 import textwrap
 import time
 import midnight_rider_text
 
+
 # A text-based game of intrigue and illusion
 
-
+#CONSTANTS
+MAX_FUEL = 50
+MAX_TOFU = 3
 
 class Game:
     """Represent our game engine
@@ -17,13 +21,15 @@ class Game:
         ,in km
         amount _of_tofu: how much tofu we  have left in our inventory
         agents_distance:describe the distance between the player and the agents
-
+        fuel:describes amount of fuel remaining
+            starts off at 50
     """
     def __init__(self):
         self.done = False
         self.distance_traveled = 0
-        self.amount_of_tofu = 3
+        self.amount_of_tofu = MAX_TOFU
         self.agents_distance = -25
+        self.fuel = MAX_FUEL
 
 
     def introduction(self) -> None:
@@ -47,18 +53,30 @@ class Game:
     def get_choice(self) -> None:
         """Gets the user's choice and changes the environment"""
         #Get the user"s response
-        user_choice = input().strpi(" ,.?!@#").lower()
+        user_choice = input().strip(" ,.?!@#").lower()
         #Based on their choice, change the attributes
+        #of the class
 
-        if user_choice == "e":
+        if user_choice == "d":
+            self.fuel = MAX_FUEL
+            self.agents_distance += random.randomrange(7,15)
+
+            #Give the user"s feedback
+            print(midnight_rider_text.REFUEL)
+            #Decide how far agents go
+        elif user_choice == "e":
             print("---Status Check---")
             print(f"Distance Traveled:{self.distance_traveled}kms")
             print(f"Tofu left:{self.amount_of_tofu}")
             print(f"Agents distance:{abs(self.agents_distance)}km away")
+            print(f"Fuel remanings:{self.fuel}L")
             print("---")
             time.sleep(1)
         elif user_choice == "q":
             self.done = True
+
+
+
 
 
 def main() -> None:

@@ -15,7 +15,12 @@ GET CHOAU
 
 CHOICES = """
     --- Your choices ---
+    D.Stop to refuel
     E.Current Status
     Q.Quit the game.
     ---
+"""
+
+REFUEL = """-------You filled the fuel tank.
+--------Agents got closer.
 """
