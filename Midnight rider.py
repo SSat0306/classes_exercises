@@ -13,11 +13,17 @@ class Game:
 
     Attributes:
         done:Discribes the game is finished or not - bool
-
+        distance traaveled: describe the distances that we"ve traveled so far this game
+        ,in km
+        amount _of_tofu: how much tofu we  have left in our inventory
+        agents_distance:describe the distance between the player and the agents
 
     """
     def __init__(self):
         self.done = False
+        self.distance_traveled = 0
+        self.amount_of_tofu = 3
+        self.agents_distance = -25
 
 
     def introduction(self) -> None:
@@ -28,7 +34,7 @@ class Game:
     def typewriter_effect(self, text: str) -> None:
         """Print out to console with a typewriter effect."""
         for char in textwrap.dedent(text):
-            time.sleep(0.2)
+            time.sleep(0.05)
             sys.stdout.write(char)
             sys.stdout.flush()
 
@@ -41,10 +47,19 @@ class Game:
     def get_choice(self) -> None:
         """Gets the user's choice and changes the environment"""
         #Get the user"s response
-        useer_choice = input().strpi(" ,.?!@#").lower()
+        user_choice = input().strpi(" ,.?!@#").lower()
         #Based on their choice, change the attributes
-        if useer_choice == "q":
+
+        if user_choice == "e":
+            print("---Status Check---")
+            print(f"Distance Traveled:{self.distance_traveled}kms")
+            print(f"Tofu left:{self.amount_of_tofu}")
+            print(f"Agents distance:{abs(self.agents_distance)}km away")
+            print("---")
+            time.sleep(1)
+        elif user_choice == "q":
             self.done = True
+
 
 def main() -> None:
     pass
