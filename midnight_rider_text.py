@@ -15,6 +15,8 @@ GET CHOAU
 
 CHOICES = """
     --- Your choices ---
+    B.Travel moderately
+    C.Spped ahead at full speed!
     D.Stop to refuel
     E.Current Status
     Q.Quit the game.
