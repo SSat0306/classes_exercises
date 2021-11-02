@@ -15,6 +15,7 @@ GET CHOAU
 
 CHOICES = """
     --- Your choices ---
+    A.Eat TOFU
     B.Travel moderately
     C.Spped ahead at full speed!
     D.Stop to refuel
@@ -25,4 +26,19 @@ CHOICES = """
 
 REFUEL = """-------You filled the fuel tank.
 --------Agents got closer.
+"""
+
+EAT_TOFU = """-----mmm. Soybean goodness.
+------Your hunger is sated.
+"""
+
+NO_TOFU = """-----You have no TOFU left.
+"""
+
+SEVERE_HUNGER = """******Your stomach rumbles.
+******You need toe at something quick. 
+"""
+
+HUNGER = """***** Your hunger is small but manegeable.
+
 """

@@ -11,6 +11,7 @@ import midnight_rider_text
 #CONSTANTS
 MAX_FUEL = 50
 MAX_TOFU = 3
+MAX_HUNGER = 50
 
 class Game:
     """Represent our game engine
@@ -23,6 +24,10 @@ class Game:
         agents_distance:describe the distance between the player and the agents
         fuel:describes amount of fuel remaining
             starts off at 50
+        hunger:Describes how hungry our player is.
+            represented by number between 0 to 50.
+            If hunger goes beyond 50, game is over
+
     """
     def __init__(self):
         self.done = False
@@ -30,7 +35,7 @@ class Game:
         self.amount_of_tofu = MAX_TOFU
         self.agents_distance = -25
         self.fuel = MAX_FUEL
-
+        self.hunger = 0
 
     def introduction(self) -> None:
         """Print the introduction text"""
@@ -54,12 +59,21 @@ class Game:
         """Gets the user's choice and changes the environment"""
         #Get the user"s response
         user_choice = input().strip(" ,.?!@#").lower()
+
         #Based on their choice, change the attributes
         #of the class
-
         agents_distance_now = random.randrange(7, 15)
 
-        if user_choice == "b":
+        if user_choice == "a":
+            if self.amount_of_tofu > 0:
+                self.amount_of_tofu -= 1
+                self.hunger = 0
+                print(midnight_rider_text.EAT_TOFU)
+            else:
+                print(midnight_rider_text.NO_TOFU)
+
+
+        elif user_choice == "b":
             # Move the player
             player_distance_now = random.randrange(5, 10)
             self.distance_traveled += player_distance_now
@@ -95,7 +109,7 @@ class Game:
 
         elif user_choice == "d":
             self.fuel = MAX_FUEL
-            self.agents_distance += random.randomrange(7,15)
+            self.agents_distance += agents_distance_now
 
             #Give the user"s feedback
             print(midnight_rider_text.REFUEL)
@@ -111,6 +125,17 @@ class Game:
         elif user_choice == "q":
             self.done = True
 
+        if user_choice in ["a", "b", "c"]:
+            self.hunger += random.randrange(8, 18)
+    def upkeep(self) -> None:
+        """Give the user remineders of hunger"""
+        if self.hunger > 40:
+            print(midnight_rider_text.SEVERE_HUNGER)
+        elif self.hunger > 25:
+            print(midnight_rider_text.HUNGER)
+
+
+
 
 
 
@@ -118,17 +143,12 @@ class Game:
 def main() -> None:
     pass
     game = Game()
-    game.introduction()
+    #game.introduction()
 
     while not game.done:
-        #TODO:Display the choices to the player.
+        game.upkeep()
         game.show_choices()
-        #TODO:Ask the player what they want to do.
-        #TODO:Change the state of the environment.
-
         game.get_choice()
-        #TODO:Check win/lose condition.
-
 
 
 if __name__ == "__main__":
