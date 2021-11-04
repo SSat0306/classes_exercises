@@ -42,3 +42,38 @@ SEVERE_HUNGER = """******Your stomach rumbles.
 HUNGER = """***** Your hunger is small but manegeable.
 
 """
+ENDGAME_TEXT = [
+    """The game has ended. Thanks for playing!""", #Quit the game
+    """\n\nTHE AGENTS HAVE CLOSED IN ON YOU
+    THERE ARE AT LEAST 20 CARS SURRONDING YOU.
+    THE LEAD CAR BUMPS YOUR PASSENGER SIDE.
+    YOU MANAGE TO CORRECT YOUR STEERING
+    TO KEEP YOU FROM CRASHING
+    
+    YOU DIDN"T SEE THE AGENT"S CAR RIGHT BESIDE YOU/
+    THAT DRIVER BUMPS YOUR CAR.
+    AND THAT"S IT.
+    
+    YOU SPIN UNCONTROLLABLy.
+    YOUR CAR FLIPS OVER AT LEAST TWO TIMES.
+    OR MORE... YOU SEEM TO HAVE LOSET COUNT.
+    
+    SIRENS-----
+    
+    "ARE THEY ALIVE THEY SAY AS YOU HEAR
+    FOOTSTEPS COMING CLOSER
+    "DOSEN"T MATTER, ALL WE WANTET WAS THE CAR
+    
+    YOU SEE A DONG SLOWLY STEP OUT OF THE OVERTURNED CAR.
+    
+    "YOU WILL NEVER STOP THE REVOLUTION"
+    THE DOG SEEM TO SAY TO THE AGENTS.
+    
+    IT WAS IN THE  CAR WHOLE TIME
+    
+    YOU DRIFT OFF INTO UNCONCTIOSNESS
+    
+    -----GAME OVER-----""", #Lose - Agent have caught out
+    """\n\n""", #Lose - Fuel have run out
+    """"""
+]
