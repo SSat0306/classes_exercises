@@ -15,6 +15,8 @@ MAX_HUNGER = 50
 
 ENDGAME_REASONS = {
     "LOSE_AGENTS": 1,
+    "LOSE_FUEL":2,
+    "LOSE_HUNGER":3
 }
 
 class Game:
@@ -146,9 +148,6 @@ class Game:
     def check_endgame(self) -> None:
         """Check to see if win/lose conditions are met.
         If they're met, change the se;f.done flag"""
-        #TODO: LOSE - Agents catch up to the player
-        #TODO: LOSE - Fuel runs out
-        #TODO: LOSE - Perish because of hunger
         #TODO: WIN - Reach the goal
 
 
@@ -156,11 +155,16 @@ class Game:
             #Allows us to quit the while loop
             self.done = True
             #Helps with printing the right ending
-            self.endgame_reason = ENDGAME_REASONS(1)
+            self.endgame_reason = ENDGAME_REASONS["LOSE_AGENTS"]
         if self.fuel <= 0:
             self.done = True
 
             self.endgame_reason = ENDGAME_REASONS["LOSE_FUEL"]
+
+        if self.hunger <= 0:
+            self.done = True
+
+            self.endgame_reason = ENDGAME_REASONS["LOSE_HUNGER"]
 
 
 def main() -> None:

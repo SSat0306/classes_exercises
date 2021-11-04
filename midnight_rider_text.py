@@ -36,7 +36,7 @@ NO_TOFU = """-----You have no TOFU left.
 """
 
 SEVERE_HUNGER = """******Your stomach rumbles.
-******You need toe at something quick. 
+******You need to eat something quick. 
 """
 
 HUNGER = """***** Your hunger is small but manegeable.
@@ -74,6 +74,24 @@ ENDGAME_TEXT = [
     YOU DRIFT OFF INTO UNCONCTIOSNESS
     
     -----GAME OVER-----""", #Lose - Agent have caught out
-    """\n\n""", #Lose - Fuel have run out
-    """"""
+    """\n\nYOUR CAR SPUTTERS AND SEEMS TO LET OUT
+    A BIG SIGH. THERE'S NO MORE FUEL LEFT
+    
+    THE AGENTS SURROND YOU AND STEP OUT 
+    OF THEIR CARS. THE LEAD AGENT RIPS
+    THE DOOR OPEN AND THROW YOU OUT OF
+    THE CAR
+    
+    -----GAME OVER-----""", ##Lose - run out of  fuel
+    """\n\nYOUR STOMACH IS EMPTY.
+WHO KNEW THAT WHAT THE DOCTOR SAID WAS TRUE,
+THAT HUMAN/ROBOT HYBRIDS WOULD NEED
+TOFU TO SUSTAIN THEMSELVES.
+YOUR ROBOT SYSTEMS START TO SHUT DOWN.
+YOUR HUMAN EYES CLOSE.
+THE LAST THING THAT YOU HEAR ARE SIRENS.
+THEY GOTCHU. THEY GOT THE CAR.
+WE FAILED...
+----GAME OVER----
+""" #Lose - HUNGER
 ]
