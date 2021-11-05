@@ -126,3 +126,9 @@ THE MOVIES.
 
 
 ]
+
+REFILL_TOFU = """
+You look at your tofu containor.
+******It is filled magically
+******"You"re welcome" says a small voice
+****** The dog used its magic tofu cooking skill\n"""
