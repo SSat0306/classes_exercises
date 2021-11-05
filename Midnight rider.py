@@ -161,7 +161,7 @@ class Game:
 
             self.endgame_reason = ENDGAME_REASONS["LOSE_FUEL"]
 
-        if self.hunger <= 0:
+        if self.hunger >= MAX_HUNGER:
             self.done = True
 
             self.endgame_reason = ENDGAME_REASONS["LOSE_HUNGER"]
