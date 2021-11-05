@@ -12,11 +12,13 @@ import midnight_rider_text
 MAX_FUEL = 50
 MAX_TOFU = 3
 MAX_HUNGER = 50
+MAX_DISTANCE = 100
 
 ENDGAME_REASONS = {
     "LOSE_AGENTS": 1,
     "LOSE_FUEL":2,
-    "LOSE_HUNGER":3
+    "LOSE_HUNGER":3,
+    "WIN":4
 }
 
 class Game:
@@ -109,7 +111,7 @@ class Game:
             self.agents_distance += agents_distance_now - player_distance_now
 
             # Burn fuel
-            self.fuel -= random.randrange(5, 11)
+            self.fuel -= random.randrange(5, 15)
 
             # Give the player some feedback
             print(f"\n-------ZOOOOOOOOOOM.")
@@ -136,7 +138,7 @@ class Game:
             self.done = True
 
         if user_choice in ["a", "b", "c"]:
-            self.hunger += random.randrange(8, 18)
+            self.hunger += random.randrange(10, 20)
     def upkeep(self) -> None:
         """Give the user remineders of hunger"""
         if self.hunger > 40:
@@ -165,6 +167,12 @@ class Game:
             self.done = True
 
             self.endgame_reason = ENDGAME_REASONS["LOSE_HUNGER"]
+
+        if self.distance_traveled >= MAX_DISTANCE:
+            self.done = True
+
+            self.endgame_reason = ENDGAME_REASONS["WIN"]
+
 
 
 def main() -> None:
